@@ -1,0 +1,24 @@
+<div class="container mt-4">
+    
+
+    <h2 class="text-center mb-4">🏠 Liste des Logements</h2>
+  
+    <div class="row">
+      <div class="col-md-6 col-lg-4 mb-4" *ngFor="let logement of logements">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title text-primary">🏡 {{ logement.type }} - Réf: {{ logement.reference }}</h5>
+            <p class="card-text">
+              📍 <strong>Adresse :</strong> {{ logement.adresse }} <br>
+              🏙️ <strong>Délégation :</strong> {{ logement.delegation }} <br>
+              🌍 <strong>Gouvernorat :</strong> {{ logement.gouvernorat }} <br>
+              📝 <strong>Description :</strong> {{ logement.description }} <br>
+              💰 <strong>Prix :</strong> {{ logement.prix }} TND
+            </p>
+            <button class="btn btn-danger" (click)="deleteLogement(logement.reference)">Supprimer</button>
+            <button class="btn btn-primary" (click)="updateLogement(logement.reference)">Modifier</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  

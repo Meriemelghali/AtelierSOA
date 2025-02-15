@@ -1,0 +1,96 @@
+<form [formGroup]="formLogement" (ngSubmit)="addLogement()">
+    <div class="mb-3">
+      <label for="reference" class="form-label">Référence</label>
+      <input 
+        formControlName="reference" 
+        class="form-control" 
+        id="reference" 
+        placeholder="Référence" 
+        required>
+      <div *ngIf="formLogement.get('reference')?.invalid && formLogement.get('reference')?.touched" class="text-danger">
+        Référence est obligatoire et doit être supérieur à 0.
+      </div>
+    </div>
+  
+    <div class="mb-3">
+      <label for="adresse" class="form-label">Adresse</label>
+      <input 
+        formControlName="adresse" 
+        class="form-control" 
+        id="adresse" 
+        placeholder="Adresse" 
+        required>
+      <div *ngIf="formLogement.get('adresse')?.invalid && formLogement.get('adresse')?.touched" class="text-danger">
+        Adresse est obligatoire.
+      </div>
+    </div>
+  
+    <div class="mb-3">
+      <label for="delegation" class="form-label">Délégation</label>
+      <input 
+        formControlName="delegation" 
+        class="form-control" 
+        id="delegation" 
+        placeholder="Délégation" 
+        required>
+      <div *ngIf="formLogement.get('delegation')?.invalid && formLogement.get('delegation')?.touched" class="text-danger">
+        Délégation est obligatoire.
+      </div>
+    </div>
+  
+    <div class="mb-3">
+      <label for="gouvernorat" class="form-label">Gouvernorat</label>
+      <input 
+        formControlName="gouvernorat" 
+        class="form-control" 
+        id="gouvernorat" 
+        placeholder="Gouvernorat" 
+        required>
+      <div *ngIf="formLogement.get('gouvernorat')?.invalid && formLogement.get('gouvernorat')?.touched" class="text-danger">
+        Gouvernorat est obligatoire.
+      </div>
+    </div>
+  
+    <div class="mb-3">
+      <label for="type" class="form-label">Type</label>
+      <input 
+        formControlName="type" 
+        class="form-control" 
+        id="type" 
+        placeholder="Type" 
+        required>
+      <div *ngIf="formLogement.get('type')?.invalid && formLogement.get('type')?.touched" class="text-danger">
+        Type est obligatoire.
+      </div>
+    </div>
+  
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <input 
+        formControlName="description" 
+        class="form-control" 
+        id="description" 
+        placeholder="Description" 
+        required>
+      <div *ngIf="formLogement.get('description')?.invalid && formLogement.get('description')?.touched" class="text-danger">
+        Description est obligatoire.
+      </div>
+    </div>
+  
+    <div class="mb-3">
+      <label for="prix" class="form-label">Prix</label>
+      <input 
+        formControlName="prix" 
+        class="form-control" 
+        id="prix" 
+        placeholder="Prix" 
+        type="number" 
+        required>
+      <div *ngIf="formLogement.get('prix')?.invalid && formLogement.get('prix')?.touched" class="text-danger">
+        Prix est obligatoire et doit être supérieur à 0.
+      </div>
+    </div>
+  
+    <button type="submit" class="btn btn-success" [disabled]="!formLogement.valid">Ajouter Logement</button>
+  </form>
+  

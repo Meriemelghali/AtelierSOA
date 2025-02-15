@@ -27,4 +27,8 @@ public class HelloRessources {
                 entity("Hello "+name+"!").
                 build();
     }
+    //PathParam : http://localhost:8088/LogementRendezVous_Etudiant_war/api/hello/Meriem
+
+    //QueryParam : http://localhost:8088/LogementRendezVous_Etudiant_war/api/hello/Meriem?lName=Ikram
+    //namlouha f recherche
 }
